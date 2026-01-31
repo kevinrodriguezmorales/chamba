@@ -1,21 +1,27 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 
 export class HelperService {
 
-    constructor() { }
+  constructor() { }
 
-    public cleanCharacters(input: string): string {
+  public cleanCharacters(input: string): string {
 
-        let acentos = "ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç ";
-        let original = "AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc-";
-        for (var i = 0; i < acentos.length; i++) {
-            input = input.replace(acentos.charAt(i), original.charAt(i)).toLowerCase();
-        }
+    if (input == null || input == undefined) return '';
 
-        return input;
+    let acentos = "ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç ";
+    let original = "AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc-";
+    for (var i = 0; i < acentos.length; i++) {
+      input = input.replace(acentos.charAt(i), original.charAt(i)).toLowerCase();
     }
+
+    return input;
+  }
+
+  static randomInt(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
 }

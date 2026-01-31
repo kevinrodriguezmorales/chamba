@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { MainTemplate } from './template/main/main.template';
-import { UserProfileTemplate } from './template/user-profile/user-profile.template';
 import { RegisterTemplate } from './template/register/register.template';
 import { LoginTemplate } from './template/login/login.template';
 import { C404Template } from './template/c404/c404.template';
@@ -27,7 +26,6 @@ import { RouterModule } from '@angular/router';
     C404Template,
     MainTemplate,
     MainContentTemplate,
-    UserProfileTemplate,
     CategoriesTemplate,
     GraphicLogin,
     DropdownDirective,

@@ -3,118 +3,111 @@
  * SE REUTILIZA CSS CODIGO 
  */
 @mixin absolute-element {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 @mixin absolute-pseudoelement {
-    content: "";
-    @include absolute-element();
+  content: "";
+  @include absolute-element();
 }
 
 .header-page {
-    padding: 21px 0;
-    position: relative;
-    overflow: hidden;
+  padding: 21px 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: var(--shadow-primary);
+  border-bottom-left-radius: 70px;
+  margin-bottom: 28px;
+
+  &--background {
+    @include absolute-element();
+    z-index: -1;
+
+    &::before {
+      @include absolute-pseudoelement();
+      background-color: rgba(38, 38, 42, 0.71);
+      mix-blend-mode: multiply;
+    }
+
+    & img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &--content {
+    color: white;
     z-index: 1;
-    box-shadow: var(--shadow-primary);
-    border-bottom-left-radius: 70px;
-    margin-bottom: 28px;
+    padding: 28px 49px;
 
-    &--background {
-        @include absolute-element();
-        z-index: -1;
+    &-button {
+      --size-button: 40px;
+      height: var(--size-button);
+      width: var(--size-button);
+      border-radius: calc(var(--size-button) / 2);
+      background-color: rgba(12, 12, 18, 0.56);
+      margin-bottom: 28px;
+      border: none;
 
-        &::before {
-            @include absolute-pseudoelement();
-            background-color: rgba(38, 38, 42, 0.71);
-            mix-blend-mode: multiply;
-        }
+      display: flex;
+      color: white;
 
-        & img {
-            height: 100%;
-            object-fit: cover;
-        }
+      transition:
+        0.2s background-color ease-in-out,
+        0.2s transform ease-in-out;
+
+      & > * {
+        margin: auto;
+      }
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        background-color: rgba(12, 12, 18, 0.76);
+      }
     }
 
-    &--content {
-        color: white;
-        z-index: 1;
-        padding: 28px 49px;
-
-        &-button {
-            --size-button: 40px;
-            height: var(--size-button);
-            width: var(--size-button);
-            border-radius: calc(var(--size-button) / 2);
-            background-color: rgba(12, 12, 18, 0.56);
-            margin-bottom: 28px;
-            border: none;
-
-            display: flex;
-            color: white;
-
-            transition: 0.2s background-color ease-in-out, 0.2s transform ease-in-out;
-
-            & > * {
-                margin: auto;
-            }
-
-            &:hover {
-                cursor: pointer;
-                transform: scale(1.1);
-                background-color: rgba(12, 12, 18, 0.76);
-            }
-        }
-
-        &-text {
-            margin-bottom: 28px;
-        }
-
-        &-breadcrumb {
-            font-family: var(--font-display);
-            font-weight: 400;
-
-            & span {
-                letter-spacing: 1px;
-                padding-left: 7px;
-                transition: 0.2s background-color ease-in-out;
-                font-size: 12px;
-                border-radius: 8.5px;
-
-                &:not(:last-child) {
-                    &::after {
-                        content: "-";
-                        display: inline-block;
-                        // position: absolute;
-                        width: 11px;
-                        text-align: right;
-                    }
-                }
-
-                &:last-child {
-                    font-weight: 700;
-                    padding-right: 7px;
-                }
-
-                &:hover,
-                &.active {
-                    background-color: rgba(0, 0, 0, 0.49);
-                    cursor: pointer;
-                }
-            }
-        }
+    &-text {
+      margin-bottom: 28px;
     }
-}
 
-.content-text {
-    &--title {
-        & h1 {
-            margin-bottom: 0;
-            font-weight: 500;
+    &-breadcrumb {
+      font-family: var(--font-display);
+      font-weight: 400;
+
+      & span {
+        letter-spacing: 1px;
+        padding-left: 7px;
+        transition: 0.2s background-color ease-in-out;
+        font-size: 12px;
+        border-radius: 8.5px;
+
+        &:not(:last-child) {
+          &::after {
+            content: "-";
+            display: inline-block;
+            // position: absolute;
+            width: 11px;
+            text-align: right;
+          }
         }
+
+        &:last-child {
+          font-weight: 700;
+          padding-right: 7px;
+        }
+
+        &:hover,
+        &.active {
+          background-color: rgba(0, 0, 0, 0.49);
+          cursor: pointer;
+        }
+      }
     }
+  }
 }

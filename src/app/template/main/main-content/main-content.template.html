@@ -1,145 +1,143 @@
 <div class="main-content--wrapper">
 
-    <div class="banner-main">
-        <div class="banner-main--content">
-            <div class="banner-main--content-image">
-                <div class="content-image--fillter"></div>
-                <img src="../../../assets/images/work-quote.jpg" alt="">
-            </div>
-            <div class="banner-main--content-quote">
-                <div class="content-quote--header">
-                    <h2 class="content-quote--header-title">¿Buscas profesionales de confianza?</h2>
-                    <p class="content-quote--header-subtitle">Encuentra "chambas" cerca y deja que te ayuden con ese
-                        pendiente
-                    </p>
-                </div>
-                <div class="content-quote--form">
-                    <div class="content-quote--form-inputs">
-                        <select name="" id="">
-                            <option value="{{distrito.id}}" *ngFor="let distrito of distritos; let i = index">
-                                {{distrito.descripcion}}</option>
-                        </select>
-                        <select name="" id="">
-                            <option value="" selected disabled>¿Lugar?</option>
-                            <option value="">Trujillo, Trujillo, La Libertad</option>
-                            <option value="">La Esperanza, Trujillo, La Libertad</option>
-                            <option value="">El Porvenir, Trujillo, La Libertad</option>
-                        </select>
-                        <!-- <button (click)="quoteWork()"><span>Cotiza la chamba</span></button> -->
-                        <button (click)="toggleQuoteDialog()"><span>Cotiza la chamba</span></button>
-                    </div>
-                    <div class="content-quote--form-inputs content-quote--form-responsive">
-                        <input type="text" name="" id="" (click)="toggleQuoteDialog()"
-                            placeholder="¿Qué chamba necesitas?">
-                        <!-- <button (click)="quoteWork()"><span>Cotiza la chamba</span></button> -->
-                        <button (click)="toggleQuoteDialog()">
-                            <div class="md-icon">
-                                <svg class="icon">
-                                    <use xlink:href="/assets/images/icons.svg#icon-search"></use>
-                                </svg>
-                            </div>
-                            <span>Cotiza</span>
-                        </button>
-                    </div>
-                    <span>Busca y encuentra especialistas en carpintería, construcción, jardinería y mucho más.</span>
-                </div>
-            </div>
+  <div class="banner-main">
+    <div class="banner-main--content">
+      <div class="banner-main--content-image">
+        <div class="content-image--fillter"></div>
+        <img src="../../../assets/images/work-quote.jpg" alt="">
+      </div>
+      <div class="banner-main--content-quote">
+        <div class="content-quote--header">
+          <h2 class="content-quote--header-title">¿Buscas profesionales de confianza?</h2>
+          <p class="content-quote--header-subtitle">Encuentra "chambas" cerca y deja que te ayuden con ese
+            pendiente
+          </p>
         </div>
+        <div class="content-quote--form">
+          <div class="content-quote--form-inputs">
+            <select name="" id="">
+              <option value="{{distrito.id}}" *ngFor="let distrito of distritos; let i = index">
+                {{distrito.descripcion}}</option>
+            </select>
+            <select name="" id="">
+              <option value="" selected disabled>¿Lugar?</option>
+              <option value="">Trujillo, Trujillo, La Libertad</option>
+              <option value="">La Esperanza, Trujillo, La Libertad</option>
+              <option value="">El Porvenir, Trujillo, La Libertad</option>
+            </select>
+            <!-- <button (click)="quoteWork()"><span>Cotiza la chamba</span></button> -->
+            <button (click)="toggleQuoteDialog()"><span>Cotiza la chamba</span></button>
+          </div>
+          <div class="content-quote--form-inputs content-quote--form-responsive">
+            <input type="text" name="" id="" (click)="toggleQuoteDialog()" placeholder="¿Qué chamba necesitas?">
+            <!-- <button (click)="quoteWork()"><span>Cotiza la chamba</span></button> -->
+            <button (click)="toggleQuoteDialog()">
+              <div class="md-icon">
+                <svg class="icon">
+                  <use xlink:href="/assets/images/icons.svg#icon-search"></use>
+                </svg>
+              </div>
+              <span>Cotiza</span>
+            </button>
+          </div>
+          <span>Busca y encuentra especialistas en carpintería, construcción, jardinería y mucho más.</span>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <most-wanted></most-wanted>
+  <most-wanted></most-wanted>
 
-    <div class="categories grid-container">
-        <div class="header-section--fourth">
-            <h3>Chamba te ofrece profesionales en...</h3>
-        </div>
-        <div class="grid-row">
-            <div class="categories-list">
-                <div class="categories-list__wrapper">
-                    <ng-container *ngFor="let item of arrayCategoriesMain; let i = index">
-                        <ng-container *ngIf="i < 11">
-                            <div class="categories-list--item">
-                                <div class="categories-list--item-content">
-                                    <div class="b-icon">
-                                        <svg class="icon">
-                                            <use
-                                                attr.xlink:href="/assets/images/icons/sprite/categories.svg#{{_helper.cleanCharacters(item.descripcion)}}">
-                                            </use>
-                                            <!-- /assets/images/icons/sprite/categories.svg#{{item.categoryIconName}} -->
-                                        </svg>
-                                    </div>
-                                    <span>{{item.descripcion}}</span>
-                                </div>
-                            </div>
-                        </ng-container>
-                    </ng-container>
-                    <div class="categories-list--item active" routerLink="/categories">
-                        <div class="categories-list--item-content">
-                            <div class="b-icon">
-                                <svg class="icon">
-                                    <use xlink:href="/assets/images/icons.svg#icon-more"></use>
-                                </svg>
-                            </div>
-                            <span>Descubrir</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="categories grid-container">
+    <div class="header-section--fourth">
+      <h3>Chamba te ofrece profesionales en...</h3>
     </div>
-
-    <div class="testimonials">
-        <div class="header-section--third">
-            <h3>Nuestros usuarios comentan</h3>
+    <div class="grid-row">
+      <div class="categories-list">
+        <div class="categories-list__wrapper">
+          <ng-container *ngFor="let item of arrayCategoriesMain; let i = index">
+            <ng-container *ngIf="i < 11">
+              <div class="categories-list--item" routerLink="/single-category/{{ item.categoryID }}/{{ item.categoryIconName }}/{{ item.categoryImageName }}">
+                <div class="categories-list--item-content">
+                  <div class="b-icon">
+                    <svg class="icon">
+                      <use
+                        attr.xlink:href="/assets/images/icons/sprite/categories.svg#{{_helper.cleanCharacters(item.categoryIconName)}}">
+                      </use>
+                      <!-- /assets/images/icons/sprite/categories.svg#{{item.categoryIconName}} -->
+                    </svg>
+                  </div>
+                  <span>{{item.categoryIconName}}</span>
+                </div>
+              </div>
+            </ng-container>
+          </ng-container>
+          <div class="categories-list--item active" routerLink="/categories">
+            <div class="categories-list--item-content">
+              <div class="b-icon">
+                <svg class="icon">
+                  <use xlink:href="/assets/images/icons.svg#icon-more"></use>
+                </svg>
+              </div>
+              <span>Descubrir</span>
+            </div>
+          </div>
         </div>
-        <div class="testimonials-list grid-container">
-            <owl-carousel-o [options]="customOptions">
-                <ng-template carouselSlide *ngFor="let item of [1, 2, 3, 4, 5]">
-                    <div class="testimonials-list__item">
-                        <div class="testimonials-card">
-                            <div class="testimonials-card--description">
-                                <p>Chamba me ayudo a contactar con el profesional para el pintado de mi casa. Me
-                                    brindaron
-                                    un
-                                    buen
-                                    servicio
-                                </p>
-                            </div>
-                            <div class="testimonials-card--professional">
-                                <div class="testimonials-card--professional-image">
-                                    <img src="../../../assets/images/user.jpeg" alt="">
-                                </div>
-                                <div class="testimonials-card--professional-data">
-                                    <div class="professional-data--name">
-                                        <span>Nombre de servicio o profesional</span>
-                                    </div>
-                                    <div class="professional-data--category">
-                                        <span>Categoría o rubro</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonials-card--user">
-                                <div class="testimonials-card--user-name">
-                                    <span>Luis Reyes</span>
-                                </div>
-                                <div class="testimonials-card--user-valuation">
-                                    <ng-container *ngFor="let item of [1, 2, 3, 4, 5]; let i = index">
-                                        <div class="icon-valuation" [ngClass]="{'active' : i < 4}">
-                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="10px"
-                                                height="10px" viewBox="0 0 10 10"
-                                                style="enable-background:new 0 0 10 10;" xml:space="preserve">
-                                                <g>
-                                                    <path class="st0" d="M0.4,9.3c0,0.3,0.3,0.5,0.6,0.5h0.9c0.3,0,0.6-0.2,0.6-0.5V4.4c0-0.3-0.3-0.5-0.6-0.5H1
+      </div>
+    </div>
+  </div>
+
+  <div class="testimonials">
+    <div class="header-section--third">
+      <h3>Nuestros usuarios comentan</h3>
+    </div>
+    <div class="testimonials-list grid-container">
+      <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide *ngFor="let item of [1, 2, 3, 4, 5]">
+          <div class="testimonials-list__item">
+            <div class="testimonials-card">
+              <div class="testimonials-card--description">
+                <p>Chamba me ayudo a contactar con el profesional para el pintado de mi casa. Me
+                  brindaron
+                  un
+                  buen
+                  servicio
+                </p>
+              </div>
+              <div class="testimonials-card--professional">
+                <div class="testimonials-card--professional-image">
+                  <img src="../../../assets/images/user.jpeg" alt="">
+                </div>
+                <div class="testimonials-card--professional-data">
+                  <div class="professional-data--name">
+                    <span>Nombre de servicio o profesional</span>
+                  </div>
+                  <div class="professional-data--category">
+                    <span>Categoría o rubro</span>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonials-card--user">
+                <div class="testimonials-card--user-name">
+                  <span>Luis Reyes</span>
+                </div>
+                <div class="testimonials-card--user-valuation">
+                  <ng-container *ngFor="let item of [1, 2, 3, 4, 5]; let i = index">
+                    <div class="icon-valuation" [ngClass]="{'active' : i < 4}">
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        x="0px" y="0px" width="10px" height="10px" viewBox="0 0 10 10"
+                        style="enable-background:new 0 0 10 10;" xml:space="preserve">
+                        <g>
+                          <path class="st0" d="M0.4,9.3c0,0.3,0.3,0.5,0.6,0.5h0.9c0.3,0,0.6-0.2,0.6-0.5V4.4c0-0.3-0.3-0.5-0.6-0.5H1
                                                             		c-0.3,0-0.6,0.2-0.6,0.5V9.3z" />
-                                                    <path class="st1"
-                                                        d="M8.3,9.2C8.5,9.2,8.7,9,8.7,8.9c0-0.2-0.1-0.2-0.2-0.3C8.3,8.5,8.2,8.4,8.2,8.3c0-0.2,0.2-0.4,0.5-0.4h0.1
+                          <path class="st1"
+                            d="M8.3,9.2C8.5,9.2,8.7,9,8.7,8.9c0-0.2-0.1-0.2-0.2-0.3C8.3,8.5,8.2,8.4,8.2,8.3c0-0.2,0.2-0.4,0.5-0.4h0.1
                                                             		c0.2,0,0.3-0.2,0.3-0.4c0-0.1-0.2-0.3-0.3-0.4c0,0,0,0,0,0C8.6,7,8.6,6.9,8.6,6.7c0-0.1,0-0.3,0.4-0.3c0.1,0,0.3-0.2,0.3-0.3
                                                             		c0-0.1,0-0.5-0.1-0.5C8.9,5.5,8.7,5.4,8.7,5.2c0-0.1,0-0.3,0.2-0.4C9,4.7,9.1,4.5,9.1,4.4c0-0.2-0.1-0.3-0.3-0.3H6.2
                                                             		C5.6,4.1,5,3.7,5,3.1V2.8c0-0.2,0.2-0.4,0.6-1.2c0.1-0.1,0.1-0.2,0.2-0.4c0,0,0-0.1,0-0.1c0-0.2-0.5-0.5-0.7-0.5
                                                             		c-0.1,0-0.2,0-0.3,0.1L4.7,1l-2,3.1c0.1,0.2,0.2,0.4,0.2,0.6v0.8C4.1,7.2,6.2,8.7,8.3,9.2z" />
-                                                    <path
-                                                        d="M1.2,3.7h0.6c0.1,0,0.2,0,0.4,0.1l1.9-3l0.3-0.4l0,0C4.5,0.1,4.8,0,5.2,0c0.6,0,1.2,0.5,1.2,1.2c0,0.1,0,0.3-0.1,0.4l0,0
+                          <path
+                            d="M1.2,3.7h0.6c0.1,0,0.2,0,0.4,0.1l1.9-3l0.3-0.4l0,0C4.5,0.1,4.8,0,5.2,0c0.6,0,1.2,0.5,1.2,1.2c0,0.1,0,0.3-0.1,0.4l0,0
                                                             		l0,0C6.2,1.7,6.1,1.9,6.1,2C5.9,2.3,5.6,2.9,5.5,3.1c0,0.2,0.3,0.3,0.5,0.3h2.6c0.6,0,1.1,0.5,1.1,1.1c0,0.2-0.1,0.4-0.2,0.6
                                                             		C9.8,5.3,10,5.6,10,6c0,0.3-0.1,0.5-0.3,0.7c0,0.1-0.1,0.1-0.2,0.1C9.7,7,9.7,7.2,9.7,7.4c0,0.4-0.2,0.8-0.6,1
                                                             		c0.1,0.1,0.1,0.3,0.1,0.5c0,0.7-0.5,1.1-1.1,1.1H4.3c-0.2,0-0.4-0.2-0.4-0.4s0.2-0.4,0.4-0.4h3.8c0.3,0,0.3-0.3,0.3-0.4
@@ -149,130 +147,130 @@
                                                             		c0.1-0.1,0.1-0.2,0.2-0.4c0,0,0-0.1,0-0.1c0-0.2-0.2-0.4-0.4-0.4c-0.1,0-0.2,0-0.3,0.1L4.7,1.2l-2,3.1c0.1,0.2,0.2,0.4,0.2,0.6v4
                                                             		c0,0.6-0.5,1.2-1.2,1.2H1.2C0.5,10,0,9.5,0,8.8v-4C0,4.2,0.5,3.7,1.2,3.7z M0.8,8.8C0.8,9,1,9.2,1.2,9.2h0.6C2,9.2,2.1,9,2.1,8.8
                                                             		v-4c0-0.2-0.2-0.4-0.4-0.4H1.2C1,4.5,0.8,4.6,0.8,4.8V8.8z" />
-                                                </g>
-                                            </svg>
-                                        </div>
-                                    </ng-container>
-                                </div>
-                                <div class="testimonials-card--user-date">
-                                    <span>mié, 29 ene de 2020</span>
-                                </div>
-                            </div>
-                        </div>
+                        </g>
+                      </svg>
                     </div>
-                </ng-template>
-            </owl-carousel-o>
-            <div class="testimonials-action grid-row">
-                <button class="primary-button active">
-                    <div class="primary-button--icon">
-                        <div class="md-icon">
-                            <i class="ico comments-primary"></i>
-                        </div>
-                    </div>
-                    <div class="primary-button--content">
-                        <span>Ver comentarios</span>
-                    </div>
-                </button>
+                  </ng-container>
+                </div>
+                <div class="testimonials-card--user-date">
+                  <span>mié, 29 ene de 2020</span>
+                </div>
+              </div>
             </div>
-        </div>
-
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+      <div class="testimonials-action grid-row">
+        <button class="primary-button active">
+          <div class="primary-button--icon">
+            <div class="md-icon">
+              <i class="ico comments-primary"></i>
+            </div>
+          </div>
+          <div class="primary-button--content">
+            <span>Ver comentarios</span>
+          </div>
+        </button>
+      </div>
     </div>
 
-    <div class="action">
-        <div class="action-squares">
-            <div effectParallax [ratio]="0.5" class="action-squares--item"></div>
-            <div class="action-squares--item"></div>
-            <div class="action-squares--item"></div>
-            <div class="action-squares--item"></div>
-            <div class="action-squares--item"></div>
-        </div>
-        <div class="action-wrapper">
-            <div class="header-section--second">
-                <h2>Te ayudamos a solucionar este pendiente</h2>
-            </div>
+  </div>
 
-            <div class="action-wrapper--group">
-                <div class="action-wrapper--group-image">
-                    <img src="../../../assets/svg/action-comments.svg" alt="">
-                </div>
-                <div class="action-wrapper--group-content">
-                    <div class="group-content--text">
-                        <h3>Comentarios que ayudan</h3>
-                        <p>Si buscas un profesional revisa la calificación y recomendación de otros usuarios para
-                            ayudarte a
-                            decidir.
-                        </p>
-                        <p>Las valoraciones ayudan a los usuarios a decidirse y que tan buen trabajo se realizo.</p>
-                    </div>
-                    <button class="primary-button active o-right">
-                        <div class="primary-button--icon">
-                            <div class="md-icon">
-                                <div class="ico comments-primary"></div>
-                            </div>
-                        </div>
-                        <div class="primary-button--content">
-                            <span>ir a comentarios</span>
-                        </div>
-                    </button>
-                </div>
-            </div>
-            <div class="action-wrapper--group">
-                <div class="action-wrapper--group-image">
-                    <img src="../../../assets/svg/action-quote.svg" alt="">
-                </div>
-                <div class="action-wrapper--group-content">
-                    <div class="group-content--text">
-                        <h3>Recibe cotizaciones gratuitas</h3>
-                        <p>Solicita cotizaciones completamente gratis, compara y decide a quien contratar sin mayores
-                            compromisos.
-                        </p>
-                        <p>Si ofreces un servicio, las cotizaciones que realices ayudarán a los usuarios a comparar
-                            precios y
-                            escoger
-                            la mejor propuesta.</p>
-                    </div>
-                    <button class="primary-button active">
-                        <div class="primary-button--icon">
-                            <div class="md-icon">
-                                <div class="ico comments-primary"></div>
-                            </div>
-                        </div>
-                        <div class="primary-button--content">
-                            <span>ir a comentarios</span>
-                        </div>
-                    </button>
-                </div>
-            </div>
-            <div class="action-wrapper--group">
-                <div class="action-wrapper--group-image">
-                    <img src="../../../assets/svg/action-proposals.svg" alt="">
-                </div>
-                <div class="action-wrapper--group-content">
-                    <div class="group-content--text">
-                        <h3>Mejores propuestas</h3>
-                        <p>Si ofreces algún servicio, registrate gratis, atiende los pedidos de cotizaciones de los
-                            usuarios y
-                            podrán
-                            llegar a un acuerdo beneficioso para ambos.</p>
-                        <p>Pública el trabajo realizado, recibe una valoración y obtén una mejor reputación ante nuevos
-                            contratos.
-                        </p>
-                    </div>
-                    <button class="primary-button active o-right">
-                        <div class="primary-button--icon">
-                            <div class="md-icon">
-                                <div class="ico comments-primary"></div>
-                            </div>
-                        </div>
-                        <div class="primary-button--content">
-                            <span>ir a comentarios</span>
-                        </div>
-                    </button>
-                </div>
-            </div>
-        </div>
+  <div class="action">
+    <div class="action-squares">
+      <div effectParallax [ratio]="0.5" class="action-squares--item"></div>
+      <div class="action-squares--item"></div>
+      <div class="action-squares--item"></div>
+      <div class="action-squares--item"></div>
+      <div class="action-squares--item"></div>
     </div>
+    <div class="action-wrapper">
+      <div class="header-section--second">
+        <h2>Te ayudamos a solucionar este pendiente</h2>
+      </div>
 
-    <action-professional [contentType]="1"></action-professional>
+      <div class="action-wrapper--group">
+        <div class="action-wrapper--group-image">
+          <img src="../../../assets/svg/action-comments.svg" alt="">
+        </div>
+        <div class="action-wrapper--group-content">
+          <div class="group-content--text">
+            <h3>Comentarios que ayudan</h3>
+            <p>Si buscas un profesional revisa la calificación y recomendación de otros usuarios para
+              ayudarte a
+              decidir.
+            </p>
+            <p>Las valoraciones ayudan a los usuarios a decidirse y que tan buen trabajo se realizo.</p>
+          </div>
+          <button class="primary-button active o-right">
+            <div class="primary-button--icon">
+              <div class="md-icon">
+                <div class="ico comments-primary"></div>
+              </div>
+            </div>
+            <div class="primary-button--content">
+              <span>ir a comentarios</span>
+            </div>
+          </button>
+        </div>
+      </div>
+      <div class="action-wrapper--group">
+        <div class="action-wrapper--group-image">
+          <img src="../../../assets/svg/action-quote.svg" alt="">
+        </div>
+        <div class="action-wrapper--group-content">
+          <div class="group-content--text">
+            <h3>Recibe cotizaciones gratuitas</h3>
+            <p>Solicita cotizaciones completamente gratis, compara y decide a quien contratar sin mayores
+              compromisos.
+            </p>
+            <p>Si ofreces un servicio, las cotizaciones que realices ayudarán a los usuarios a comparar
+              precios y
+              escoger
+              la mejor propuesta.</p>
+          </div>
+          <button class="primary-button active">
+            <div class="primary-button--icon">
+              <div class="md-icon">
+                <div class="ico comments-primary"></div>
+              </div>
+            </div>
+            <div class="primary-button--content">
+              <span>ir a comentarios</span>
+            </div>
+          </button>
+        </div>
+      </div>
+      <div class="action-wrapper--group">
+        <div class="action-wrapper--group-image">
+          <img src="../../../assets/svg/action-proposals.svg" alt="">
+        </div>
+        <div class="action-wrapper--group-content">
+          <div class="group-content--text">
+            <h3>Mejores propuestas</h3>
+            <p>Si ofreces algún servicio, registrate gratis, atiende los pedidos de cotizaciones de los
+              usuarios y
+              podrán
+              llegar a un acuerdo beneficioso para ambos.</p>
+            <p>Pública el trabajo realizado, recibe una valoración y obtén una mejor reputación ante nuevos
+              contratos.
+            </p>
+          </div>
+          <button class="primary-button active o-right">
+            <div class="primary-button--icon">
+              <div class="md-icon">
+                <div class="ico comments-primary"></div>
+              </div>
+            </div>
+            <div class="primary-button--content">
+              <span>ir a comentarios</span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <action-professional [contentType]="1"></action-professional>
 
 </div>

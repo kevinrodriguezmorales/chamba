@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { WorkerProfile } from 'src/app/@core/models/worker.model';
 
 @Component({
-    selector: 'card-professional',
-    templateUrl: './card-professional.component.html',
-    styleUrls: ['./card-professional.component.scss']
+  selector: 'card-professional',
+  templateUrl: './card-professional.component.html',
+  styleUrls: ['./card-professional.component.scss']
 })
 
 export class CardProfessionalComponent {
-    constructor() { }
+  @Input() worker: WorkerProfile;
+  
+  constructor() { }
 }

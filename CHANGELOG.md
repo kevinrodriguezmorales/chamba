@@ -6,7 +6,24 @@ El formato se inspira en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0
 
 ## [Unreleased]
 
-- Pendiente de definir próximos cambios y versiones.
+## [0.2.0] - 2026-01-31
+
+### Added
+- Modelo de dominio `WorkerProfile` para representar el perfil de un profesional (categoría, foto, verificación y métricas de trabajo).
+- Mock `LIST_WORKERS` que genera dinámicamente una colección de profesionales por categoría usando datos aleatorios y los valores de `LIST_CATEGORIES`.
+- Lógica en `SingleCategoryTemplate` para obtener los parámetros de la ruta (`categoryID`, `categoryName`, `categoryImage`) y listar los profesionales de la categoría seleccionada.
+
+### Changed
+- `HelperService` ahora expone un método estático `randomInt` para la generación de datos aleatorios reutilizable en los mocks de la aplicación.
+- `JobService.listCategoriesWorkers()` pasa a consumir el mock `LIST_CATEGORIES` y devolver los datos como un `Observable` usando `of` + `delay`, unificando la fuente de categorías en la home y en la pantalla de categorías.
+- `CategoriesTemplate` y `MainContentTemplate` se actualizan para consumir el nuevo servicio de categorías y trabajar con la estructura de datos proveniente de los mocks.
+- El mock de categorías `LIST_CATEGORIES` se actualiza con nombres y _slugs_ de icono/imagen alineados al nuevo set de imágenes en `/assets/images/categories`.
+- `CardProfessionalComponent` ahora recibe un `WorkerProfile` tipado vía `@Input`, y se adapta para mostrar la información del profesional en las nuevas tarjetas de resultado.
+- Se refactoriza el marcado y los estilos de las tarjetas de profesionales, encabezados de página, lector de mensajes y publicaciones de trabajadores para mejorar la experiencia visual y la consistencia del diseño.
+- Se elimina la antigua plantilla de perfil de usuario (`UserProfileTemplate`) y sus archivos asociados.
+
+### Fixed
+- Se actualizan el nombre de las imágenes de categorías para que coincidan con el mock de `LIST_CATEGORIES`, simplificando el set de recursos de la aplicación.
 
 ## [0.1.0] - 2026-01-25
 

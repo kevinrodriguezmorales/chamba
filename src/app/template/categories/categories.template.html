@@ -7,16 +7,16 @@
             <div class="categories-list__wrapper">
                 <ng-container *ngFor="let item of arrayCategories">
                     <div class="categories-list--item"
-                        routerLink="/single-category/{{ item.id }}/{{ item.descripcion }}/{{ item.img }}">
+                        routerLink="/single-category/{{ item.categoryID }}/{{ item.categoryIconName }}/{{ item.categoryImageName }}">
                         <div class="categories-list--item-content">
                             <div class="b-icon">
                                 <svg class="icon">
                                     <use
-                                        attr.xlink:href="/assets/images/icons/sprite/categories.svg#{{_helper.cleanCharacters(item.descripcion)}}">
+                                        attr.xlink:href="/assets/images/icons/sprite/categories.svg#{{_helper.cleanCharacters(item.categoryIconName)}}">
                                     </use>
                                 </svg>
                             </div>
-                            <span>{{item.descripcion}}</span>
+                            <span>{{item.categoryIconName}}</span>
                         </div>
                     </div>
                 </ng-container>

@@ -1,124 +1,90 @@
 <div class="card-professional">
-    <div class="card-professional--content">
+  <div class="card-professional--content">
 
-        <div class="card-professional--content-top">
-            <div class="content-top--detail"></div>
+    <div class="card-professional--content-top">
+      <div class="content-top--detail"></div>
 
-            <figure class="content-top--professional-image user-photo">
-                <img src="../../../assets/images/user1.jpg" alt="">
-            </figure>
+      <figure class="content-top--professional-image user-photo">
+        <img src="{{worker.photo}}" alt="{{worker.names}}">
+      </figure>
 
-            <div class="content-top--professional-data">
+      <div class="content-top--professional-data">
 
-                <div class="professional-data--top">
+        <div class="professional-data--top">
 
-                    <div class="professional-data--top-name">
-                        <span>samuel lee</span>
-                    </div>
+          <div class="professional-data--top-name">
+            <span>{{worker.names}}</span>
+          </div>
 
-                    <div class="professional-data--top-check default-check">
-                        <div class="md-icon">
-                            <i class="ico check"></i>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="professional-data--bottom">
-                    <span>Jardinería</span>
-                </div>
-
+          <ng-container *ngIf="worker.isVerified">
+            <div class="professional-data--top-check default-check">
+              <div class="md-icon">
+                <i class="ico check"></i>
+              </div>
             </div>
+          </ng-container>
+
+        </div>
+        <div class="professional-data--bottom">
+          <span>{{worker.category.name}}</span>
         </div>
 
-        <div class="card-professional--content-middle">
-
-            <div class="content-middle--summary-item">
-                <div class="summary-item--icon">
-                    <div class="default-icon">
-                        <i class="ico bag-work"></i>
-                    </div>
-                </div>
-                <div class="summary-item--description">
-                    <span>trabajos</span>
-                </div>
-                <div class="summary-item--value">
-                    <span>13</span>
-                </div>
-            </div>
-
-            <div class="content-middle--summary-item">
-                <div class="summary-item--icon">
-                    <div class="default-icon">
-                        <i class="ico valuation-default"></i>
-                    </div>
-                </div>
-                <div class="summary-item--description">
-                    <span>valoración</span>
-                </div>
-                <div class="summary-item--value">
-                    <span>4.5</span>
-                </div>
-            </div>
-
-            <div class="content-middle--summary-item">
-                <div class="summary-item--icon">
-                    <div class="default-icon">
-                        <i class="ico quote"></i>
-                    </div>
-                </div>
-                <div class="summary-item--description">
-                    <span>cotizaciones</span>
-                </div>
-                <div class="summary-item--value">
-                    <span>50</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- <div class="card-professional--content-bottom">
-
-            <div class="content-bottom--item">
-                <button class="content-bottom--item-button">
-                    <div class="input-icon">
-                        <i class="fab fa-facebook-f"></i>
-                    </div>
-                </button>
-            </div>
-
-            <div class="content-bottom--item">
-                <button class="content-bottom--item-button">
-                    <div class="input-icon">
-                        <i class="fab fa-twitter"></i>
-                    </div>
-                </button>
-            </div>
-
-            <div class="content-bottom--item">
-                <button class="content-bottom--item-button">
-                    <div class="input-icon">
-                        <i class="fab fa-facebook-f"></i>
-                    </div>
-                </button>
-            </div>
-
-            <div class="content-bottom--item button-group">
-                <div class="content-bottom--item-button">
-                    <div class="input-icon">
-                        <i class="fas fa-ellipsis-v"></i>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
+      </div>
     </div>
-    <button class="primary-button active button">
-        <div class="primary-button--icon">
-            <div class="md-icon">
-                <i class="ico register-primary"></i>
-            </div>
+
+    <div class="card-professional--content-middle">
+
+      <div class="content-middle--summary-item">
+        <div class="summary-item--icon">
+          <div class="default-icon">
+            <i class="ico bag-work"></i>
+          </div>
         </div>
-        <div class="primary-button--content">
-            <span> Ver perfil </span>
+        <div class="summary-item--description">
+          <span>trabajos</span>
         </div>
-    </button>
+        <div class="summary-item--value">
+          <span>{{worker.work.total}}</span>
+        </div>
+      </div>
+
+      <div class="content-middle--summary-item">
+        <div class="summary-item--icon">
+          <div class="default-icon">
+            <i class="ico valuation-default"></i>
+          </div>
+        </div>
+        <div class="summary-item--description">
+          <span>valoración</span>
+        </div>
+        <div class="summary-item--value">
+          <span>{{worker.work.valoration}}</span>
+        </div>
+      </div>
+
+      <div class="content-middle--summary-item">
+        <div class="summary-item--icon">
+          <div class="default-icon">
+            <i class="ico quote"></i>
+          </div>
+        </div>
+        <div class="summary-item--description">
+          <span>cotizaciones</span>
+        </div>
+        <div class="summary-item--value">
+          <span>{{worker.work.quotes}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="primary-button active button">
+    <div class="primary-button--icon">
+      <div class="md-icon">
+        <i class="ico register-primary"></i>
+      </div>
+    </div>
+    <div class="primary-button--content">
+      <span> Ver perfil </span>
+    </div>
+  </button>
 </div>

@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 
 import { environment } from '../../../environments/environment';
 
-import { CATEGORIESLIST } from 'src/app/@core/mocks/categories';
+import { LIST_CATEGORIES } from 'src/app/@core/mocks/categories';
 import { delay } from 'rxjs/operators';
 
 @Injectable({
@@ -25,7 +25,7 @@ export class JobService {
     // let url = environment.apiUrl + "oficio";
     // return this._http.get(url);
 
-    this.collectionCategories = CATEGORIESLIST;
+    this.collectionCategories = LIST_CATEGORIES;
     return of(this.collectionCategories).pipe(delay(500));
   }
 

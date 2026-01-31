@@ -36,7 +36,7 @@ export class CategoriesTemplate implements OnInit {
     public showCategories(){
         this.categories = this.jobService.listCategoriesWorkers().subscribe(res => {
             const dataResponse = JSON.parse(JSON.stringify(res));
-            this.arrayCategories = dataResponse.response;
+            this.arrayCategories = dataResponse;
         });
 
     }

@@ -33,8 +33,8 @@
         <div class="single-category--list grid-container">
             <div class="grid-row">
                 <ng-container
-                    *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], let in = index">
-                    <card-professional routerLink="/worker/{{ in }}/home"></card-professional>
+                    *ngFor="let worker of workersByCategory, let in = index">
+                    <card-professional [worker]="worker" routerLink="/worker/{{ in }}/home"></card-professional>
                 </ng-container>
             </div>
         </div>

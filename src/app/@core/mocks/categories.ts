@@ -1,6 +1,6 @@
 import { Categories } from '../models/categories.model';
 
-export const CATEGORIESLIST: Categories[] = [
+export const LIST_CATEGORIES: Categories[] = [
     {
         categoryID: 1,
         categoryName: "Carpintería",
@@ -78,7 +78,7 @@ export const CATEGORIESLIST: Categories[] = [
         categoryID: 13,
         categoryName: "Gasfitería",
         categoryIconName: "gasfiteria",
-        categoryImageName: "gasfitería"
+        categoryImageName: "gasfiteria"
     },
     {
         categoryID: 14,
